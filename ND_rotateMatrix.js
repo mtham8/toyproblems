@@ -41,3 +41,19 @@
 
 // INPUT: [ [ 1, 2 ], [ 3, 4 ] ]
 // OUTPUT: [ [ 3, 1 ], [ 4, 2 ] ]
+
+function rotateMatrix (matrix) {
+  var rotated = [];
+  var initial = matrix;
+  var counter = 0;
+  for(var j = 0; j < initial.length; j++) {
+    rotated.push([])
+  }
+  while(counter < initial.length) {
+    for(var i = initial.length-1; i >= 0; i--) {
+      rotated[counter].push(initial[counter][i])
+      counter++
+    }
+  }
+  return rotated
+}
