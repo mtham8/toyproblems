@@ -47,13 +47,18 @@ function rotateMatrix (matrix) {
   var initial = matrix;
   var counter = 0;
   for(var j = 0; j < initial.length; j++) {
+    // initialize an array to store rotated values
     rotated.push([])
   }
   while(counter < initial.length) {
     for(var i = initial.length-1; i >= 0; i--) {
-      rotated[counter].push(initial[counter][i])
-      counter++
+      // add the first value from the last array in the intial matrix into
+      // the first value of the first array in new matrix
+      rotated[counter].push(initial[i][counter])
     }
+    // increment count
+    counter++
   }
+  // return new rotated array
   return rotated
 }
