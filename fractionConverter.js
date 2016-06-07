@@ -10,9 +10,11 @@
 
 function fractionConverter (number){
   var counter = 1;
-  while((number*counter) % 1 !== 0) {
+
+  while(parseFloat(number*counter).toFixed(6) % 1 !== 0) {
     // multiply the number by the counter until the number becomes a whole number
     counter++;
   }
-  return "" + (number*counter) + "/" + counter
+  return "" + parseInt(number*counter) + "/" + counter
+
 }
