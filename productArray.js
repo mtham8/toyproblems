@@ -20,17 +20,14 @@ function productArray (array) {
   for (var i = 1; i < array.length; i++) {
     // multiply the values left of the position
     left[i] = left[i-1]*array[i-1];
-    console.log(i, 'this is left[i] ', left[i]);
   }
   for (var j = array.length-2; j >= 0; j--) {
     // multiply the values right of the position
     right[j] = right[j+1]*array[j+1];
-    console.log(j, 'this is right[j] ', right[j]);
   }
   for (var k = 0; k < array.length; k++) {
     // multiply left and right
     output[k] = right[k]*left[k];
-    console.log(k, 'this is output ', output[k]);
   }
   return output;
 }
