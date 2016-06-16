@@ -25,6 +25,11 @@
 
 // NOTE: DO NOT use JavaScript’s built-in sorting function (Array.prototype.sort).
 
+// Plain English:
+// create a variable to store the values less than the pivot value
+// create a variable to store the values greater than the pivot value
+// loop over the input array
+
 const quickSort = (data) => {
   if (data.length === 0) {
     return [];
