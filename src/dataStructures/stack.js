@@ -22,3 +22,21 @@ Stack.prototype.pop = () => {
 Stack.prototype.size = () => {
   return this.counter;
 }
+
+// class Stack {
+//   constructor () {
+//     this.storage = [];
+//   }
+// }
+
+// Stack.prototype.push = value => {
+//   this.storage.push(value);
+// }
+
+// Stack.prototype.pop = () => {
+//   this.storage.pop();
+// }
+
+// Stack.prototype.size = () {
+//   return this.storage.length;
+// }

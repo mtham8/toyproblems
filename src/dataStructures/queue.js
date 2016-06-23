@@ -23,3 +23,21 @@ Queue.prototype.dequeue = () => {
 Queue.prototype.size = () {
   return this.counter-this.end;
 }
+
+// class Queue {
+//   constructor () {
+//     this.storage = [];
+//   }
+// }
+
+// Queue.prototype.enqueue = value => {
+//   this.storage.push(value);
+// }
+
+// Queue.prototype.dequeue = () => {
+//   this.storage.shift();
+// }
+
+// Queue.prototype.size = () => {
+//   return this.storage.length;
+// }
