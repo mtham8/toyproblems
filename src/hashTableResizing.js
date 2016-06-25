@@ -13,6 +13,7 @@ var makeHashTable = function(){
      //Your code here
     var newStorage = storage;
     storageLimit = newSize;
+    size = 0;
 
     // for (var i = 0; i < newStorage.length; i++){
     //   for(var j = 0; j < newStorage[i].length; j++){
@@ -87,6 +88,11 @@ var makeHashTable = function(){
 //       }
 //     }
 //   };
+
+  // result.find = function(index){
+  //  //return the bucket at a given index
+  //   return storage[index];
+  // };
 
 //   return result;
 // };
