@@ -100,6 +100,27 @@ function combineLL () {
 
 
 // REVERSE LINKED LIST
+// Input : Head of following linked list
+//        1->2->3->4->NULL
+// Output : Linked list should be changed to,
+//        4->3->2->1->NULL
+linkedList.prototype.reverse = function (head) {
+  var current = head;
+  var previous = null;
+  var holder = null;
+  if (current === null || current.next === null) {
+    return current;
+  }
+  while (current) {
+    holder = current.next;
+    current.next = previous;
+    previous = current;
+    current = holder;
+  }
+  current = previous;
+  return current;
+}
+
 
 // GIVEN A LINKED LIST, RETURN THE MIDDLE NODE - IF EVEN, ROUND DOWN
 
