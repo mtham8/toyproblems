@@ -35,12 +35,28 @@
 // };
 
 Tree.prototype.getClosestCommonAncestor = function(node1, node2){
-  // TODO: implement me!
+  var path1 = this.getAncestorPath(node1);
+  var path2 = this.getAncestorPath(node2);
+  // if children can't be found
+  if (!path1 || !path2) return null;
+  var closestAncestor = null;
+  for (var i = 0; i < Math.min(path1.length, path2.length); i++) {
+    if (path1[i] === path2[i]) {
+      closestAncestor = path1[i];
+    }
+  }
+  return closestAncestor;
 }
 
 Tree.prototype.getAncestorPath = function(path){
-  // TODO: implement me!
-  var path = [];
+  if (this === path) return [this];
+  for (var i = 0; i < this.children.length; i++) {
+    var pathFromChild = this.children[i].getAncestorPath(path);
+    if (pathFromChild) {
+      return [this].concat(pathFromChild);
+    }
+  }
+  return null;
 }
 
 // /**
