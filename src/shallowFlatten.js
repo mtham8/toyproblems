@@ -24,3 +24,14 @@ const flatten = array => {
   search(array);
   return output;
 }
+
+// USING REDUCE:
+const flatten = array =>
+  array.reduce((output, curr) => {
+    if(Array.isArray(curr)) {
+      output.push(...curr)
+    } else {
+      output.push(curr)
+    }
+    return output;
+  }, [])
