@@ -9,9 +9,7 @@
 // INPUT: "My dad is a racecar athlete"
 // OUTPUT: "a racecar a"
 
-function longestPalindrome (string) {
-  // Write your code here, and
-  // return your final answer.
+var longestPalindrome = function (string) {
   var stringArr = string.split('');
   var compStorage = [];
   var palindrome = "";
@@ -48,4 +46,56 @@ function longestPalindrome (string) {
   return palindrome.join('');
 }
 
+// NO RECURSION VERSION:
+
+var longestPalindrome = function(string){
+  var dictionary = {}
+  var longestMaxLength = 0;
+  var longestPalindromeLength = 0
+  var longestStringPalindrome = ""
+  // Create a dictionary to store indexes of like string characters
+  for(var i = 0; i < string.length; i++){
+    if(dictionary[string[i]]){
+      dictionary[string[i]].push(i)
+      if(i - dictionary[string[i]][0] > longestMaxLength){
+        longestMaxLength = i - dictionary[string[i]][0]
+      }
+      // Map indexes into the dictionary, so they look like this:
+      // dictionary {
+      //    a: [1,4,5]
+      //    b: [2,3]
+      // }
+      // calculate the longest possible palindrom and store that in longestMaxLength
+    } else {
+      dictionary[string[i]] = [i]
+    }
+  }
+
+  for(var key in dictionary){
+    // look through the keys, if the difference between max and min index in the key is less than the
+    // current longest length of a palindrome, continue to the next key
+    if(dictionary[key][dictionary[key].length -1]-dictionary[key][0] <= longestPalindromeLength ||dictionary[key].length === 1 ){
+      continue
+    }
+    // Same as all the other palindrom problems. Start searching the for palindroms, compare to highest, etc
+    for(var i = 0; i < dictionary[key].length; i++){
+      for(var j = dictionary[key].length -1; j > i; j--){
+        var start = dictionary[key][i]
+        var end = dictionary[key][j]
+        var copy = string.substring(start, end+1)
+        var reversecopy = copy.split("").reverse().join("")
+        if(copy === reversecopy && end-start > longestPalindromeLength){
+          longestPalindromeLength = end-start
+          longestStringPalindrome = copy
+          if(longestPalindromeLength >= longestMaxLength){
+            return copy
+          }
+          // if this is the highest max length, return out of the function
+          break
+        }
+      }
+    }
+  }
+  return longestStringPalindrome
+}
 
