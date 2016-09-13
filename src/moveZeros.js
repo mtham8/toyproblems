@@ -22,3 +22,4 @@ const moveZeros = array => {
   return array;
 }
 
+// time complexity: On
