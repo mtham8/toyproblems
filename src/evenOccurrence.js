@@ -27,5 +27,5 @@
 
 const evenOccurrence = (arr, obj = {}) => arr.map(a => {
   obj[a] = obj[a] +1 || 1;
-  return a
+  return a;
 }).filter(a => obj[a] % 2 === 0).splice(0,1).join('')
