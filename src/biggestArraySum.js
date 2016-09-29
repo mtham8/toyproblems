@@ -5,7 +5,7 @@
    output: 10
 */
 
-const biggestArraySum = (input) => {
+const biggestArraySum = input => {
   let sum = 0;
   let largest = 0;
   let count = 0;
