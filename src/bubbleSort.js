@@ -8,31 +8,32 @@
 // Implement a function that takes an array and sorts it using this technique.
 
 // REFACTORED
-// var bubbleSort = function(input) {
-//   var count = 0;
-//   while (count < input.length) {
-//     for (var i = 0; i < input.length; i++) {
-//       var temp1 = input[i];
-//       var temp2 = input[i+1];
-//       if (input[i] > input[i+1]) {
-//         input[i] = temp2;
-//         input[i+1] = temp1;
-//       }
-//     }
-//     count++
-//   };
-// return input;
-// }
-
-var bubbleSort = function(array) {
-  for (var i = 0; i < array.length-1; i++) {
-    for (var j = 0; j < array.length-1; j++) {
-      if(array[j] > array[j+1]) {
-        var el = array[j];
-        array[j] = array[j+1];
-        array[j+1] = el;
+const bubble = array => {
+  let counter = 0;
+  do {
+    for(let i = 0; i < array.length; i++) {
+      let temp1 = array[i];
+      let temp2 = array[i+1];
+      if(array[i] > array[i+1]) {
+        array[i] = temp2;
+        array[i+1] = temp1;
       }
     }
+    counter++;
   }
+  while(counter < array.length);
   return array;
-};
+}
+
+// var bubbleSort = function(array) {
+//   for (var i = 0; i < array.length-1; i++) {
+//     for (var j = 0; j < array.length-1; j++) {
+//       if(array[j] > array[j+1]) {
+//         var el = array[j];
+//         array[j] = array[j+1];
+//         array[j+1] = el;
+//       }
+//     }
+//   }
+//   return array;
+// };
