@@ -25,6 +25,26 @@ const bubble = array => {
   return array;
 }
 
+// OPTIMIZED
+// this is optimized bc creating the swap variable as a flag will exit the while loop if the collection is already sorted
+const bubble = array => {
+  let swapped = true;
+  do {
+    swapped = false;
+    for(let i = 0; i < array.length; i++) {
+      let temp1 = array[i];
+      let temp2 = array[i+1];
+      if(array[i] > array[i+1]) {
+        array[i] = temp2;
+        array[i+1] = temp1;
+        swapped = true;
+      }
+    }
+  }
+  while(swapped === true);
+  return array;
+}
+
 // var bubbleSort = function(array) {
 //   for (var i = 0; i < array.length-1; i++) {
 //     for (var j = 0; j < array.length-1; j++) {
