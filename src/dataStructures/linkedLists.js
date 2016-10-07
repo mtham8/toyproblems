@@ -121,6 +121,12 @@ linkedList.prototype.reverse = function (head) {
   return current;
 }
 
+// REFACTORED ==> not mine
+const reverseLinkedList = (head, a = head, b = null) => {
+  head = a.next ? reverseLinkedList(head, a.next, a) : a;
+  a.next = b;
+  return head;
+};
+
 
 // GIVEN A LINKED LIST, RETURN THE MIDDLE NODE - IF EVEN, ROUND DOWN
-
