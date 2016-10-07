@@ -36,4 +36,5 @@ const moveZeroes = array => {
             array[i] = temp1;
         }
     }
+    return array;
 };
