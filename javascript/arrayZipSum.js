@@ -20,3 +20,7 @@ function zipSum (xs, ys) {
   }
   return newArr;
 }
+
+// refactor + ES6
+const zipSum = (xs, ys) => xs.length < ys.length ? xs.map((a, i) => a + ys[i]) : ys.map((a, i) => a + xs[i])
+
