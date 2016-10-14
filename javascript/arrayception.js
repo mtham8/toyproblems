@@ -33,3 +33,20 @@ function arrayception (array){
   recurse(array, 1);
   return count;
 }
+
+// ES6
+const arrayception = array => {
+  let count = 0;
+  const recurse = (arr, max) => {
+    for(let i = 0; i < arr.length; i++) {
+      if(Array.isArray(arr[i])) {
+        recurse(arr[i], max+1)
+      }
+      else if (max > count) {
+        count = max;
+      }
+    }
+  }
+  recurse(array, 1);
+  return count;
+}

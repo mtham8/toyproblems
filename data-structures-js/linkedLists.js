@@ -117,8 +117,7 @@ linkedList.prototype.reverse = function (head) {
     previous = current;
     current = holder;
   }
-  current = previous;
-  return current;
+  return previous;
 }
 
 // REFACTORED ==> not mine
