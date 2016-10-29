@@ -127,13 +127,13 @@ const spiralTraversal = matrix => {
     // push the top row
     results.push(... matrix.shift());
     // push the last item in each row
-    results.push(... matrix.map((a,i) => matrix[i].pop()));
+    results.push(... matrix.map((_,i) => matrix[i].pop()));
     // check if there's remaining rows
     if(results.length === totalLength) return results;
     // push the last row and reverse
     results.push(... matrix.pop().reverse());
     // push the first item in each row and reverse
-    results.push(... matrix.map((a,i) => matrix[i].shift()).reverse());
+    results.push(... matrix.map((_,i) => matrix[i].shift()).reverse());
   }
   // return result
   return results;
