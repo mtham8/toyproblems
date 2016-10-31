@@ -103,29 +103,28 @@ function combineLL () {
 // Input : Head of following linked list
 //        1->2->3->4->NULL
 // Output : Linked list should be changed to,
-//        4->3->2->1->NULL
-linkedList.prototype.reverse = function (head) {
-  var current = head;
-  var previous = null;
-  var holder = null;
-  if (current === null || current.next === null) {
-    return current;
-  }
-  while (current) {
-    holder = current.next;
+//        NULL<-1<-2<-3<-4
+const reverse = (LL) => {
+  // current variable to be the head
+  let curr = LL.head;
+  // previous variable to be null
+  let previous = null;
+  // temp variable to be null
+  let temp = null;
+  // while current
+  while(current){
+    // temp = current.next ==> to hold reference to the next node
+    temp = current.next;
+    // current.next = previous ==> to set the head.next to null, which becomes the tail
     current.next = previous;
+    // previous = current ==> to set the previous as the current head
     previous = current;
-    current = holder;
+    // current = temp ==> to set the current to the next node
+    current = temp;
   }
+  // return previous/LL.head
   return previous;
 }
-
-// REFACTORED ==> not mine
-const reverseLinkedList = (head, a = head, b = null) => {
-  head = a.next ? reverseLinkedList(head, a.next, a) : a;
-  a.next = b;
-  return head;
-};
 
 
 // GIVEN A LINKED LIST, RETURN THE MIDDLE NODE - IF EVEN, ROUND DOWN

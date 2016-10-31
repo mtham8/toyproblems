@@ -68,7 +68,7 @@ const rotateMatrix = matrix => {
   let rotated = [], temp = [], length = matrix[0].length;
   for(let i = 0; i < length; i++){
     temp = [];
-    for(var j = length -1; j >=0; j--){
+    for(let j = length -1; j >=0; j--){
       temp.push(matrix[j][i]);
     }
     rotated.push(temp);
